@@ -109,10 +109,6 @@ function sync(a) {
                     }, d));
             }
     }
-    function h(a) {
-        
-    }
-    var k = nf;
     var g = null,
         e = window;
     f = dt();
