@@ -143,23 +143,14 @@ function sync(a) {
     if (g)
         try {
             f = dt();
-            var l = document.URL.replace(/countdown.*/, "ts.php?t=" + f);
-            g.open("GET", l, !0);
-            g.onreadystatechange = function () {
-                var a = dt();
-                if (g && 4 == g.readyState && 200 == g.status) {
-                    var b = (f + a) / 2,
-                        d = 1e3 * parseFloat(g.responseText),
-                        d = Math.floor(d - b),
-                        b = a - b;
-                    document.cookie = "tads=" + (a + "_" + d + "_" + b) + "; path=/";
-                    c(d, b, 0);
-                    g = null;
-                    upd();
-                }
-            };
+            var a = dt();
+            var b = (f + a) / 2,
+            d = 1e3 * parseFloat((Date.now()/1000)+""),
+            d = Math.floor(d - b),
+            b = a - b;
+            c(d, b, 0);
+            upd();
             f = dt();
-            g.send("");
         } catch (m) {}
 }
 function init() {
