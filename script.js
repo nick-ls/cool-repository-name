@@ -110,48 +110,20 @@ function sync(a) {
             }
     }
     function h(a) {
-        try {
-            if (e.ActiveXObject) return new ActiveXObject(a);
-        } catch (n) {}
+        
     }
-    var k = document.cookie,
-        f;
-    if (k) {
-        var b = k.match(/tads\=(\d+)_(\d+)_(\d+)/);
-        if (b) {
-            var d = dt();
-            if (-1e4 < b[1] - d) {
-                c(b[2] - 0, b[3] - 0, 0);
-                upd();
-                return;
-            }
-        }
-        if (1e3 > a && 0 <= k.indexOf("tads=c")) {
-            a = 2 * a + 10;
-            setTimeout("sync(" + a + ")", a);
-            return;
-        }
-    }
-    document.cookie = "tads=c; path=/";
+    var k = nf;
     var g = null,
         e = window;
-    try {
-        e.XMLHttpRequest && (g = new XMLHttpRequest());
-    } catch (m) {}
-    g || (g = h("Msxml2.XMLHTTP"));
-    g || (g = h("Microsoft.XMLHTTP"));
-    if (g)
-        try {
-            f = dt();
-            var a = dt();
-            var b = (f + a) / 2,
-            d = 1e3 * parseFloat((Date.now()/1000)+""),
-            d = Math.floor(d - b),
-            b = a - b;
-            c(d, b, 0);
-            upd();
-            f = dt();
-        } catch (m) {}
+    f = dt();
+    var a = dt();
+    var b = (f + a) / 2,
+    d = 1e3 * parseFloat((Date.now()/1000)+""),
+    d = Math.floor(d - b),
+    b = a - b;
+    c(d, b, 0);
+    upd();
+    f = dt();
 }
 function init() {
     lt0 = 0;
