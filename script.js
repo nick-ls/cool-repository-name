@@ -1,8 +1,7 @@
 // Set the target date and time (in UTC)
 const targetDate = new Date(Date.UTC(2023, 4, 6, 0, 0, 0)); // May 6, 2023 at 00:00:00 UTC
 
-// Update the countdown timer every second
-setInterval(() => {
+update = () => {
   // Get the HTML elements for the countdown timer
   const cdElem = document.getElementById("cd");
   const chElem = document.getElementById("ch");
@@ -29,4 +28,7 @@ setInterval(() => {
   chElem.innerText = hours.toString().padStart(2, "0");
   cmElem.innerText = minutes.toString().padStart(2, "0");
   csElem.innerText = seconds.toString().padStart(2, "0");
-}, 1000); // Update every second
+}
+update();
+// Update the countdown timer every second
+setInterval(update, 1000); // Update every second
